@@ -84,6 +84,9 @@
     </div>
 
     <script>
+        // Intro animation
+        gsap.from("", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
+        
         // JavaScript to handle navigation
         document.querySelectorAll('.navbar a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -114,6 +117,11 @@
                 });
                 targetContent.classList.remove('hidden');
             }
+        });
+        
+        // Outro animation
+        window.addEventListener('beforeunload', function (e) {
+            gsap.to(".content", { duration: 0.5, opacity: 0, y: -20, ease: "power1.out" });
         });
     </script>
 </body>
