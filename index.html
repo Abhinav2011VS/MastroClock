@@ -23,9 +23,17 @@
         // Navbar animation
         gsap.from(".nav-link", { duration: 1, y: -50, opacity: 0, stagger: 0.2, ease: "back.out(1.7)" });
 
-        // Hero section animation
-        gsap.from(".hero-title", { duration: 2, y: -50, opacity: 0, ease: "bounce" });
-        gsap.from(".hero-subtitle", { duration: 2, y: 50, opacity: 0, delay: 1 });
+        // Hero section intro animation
+        gsap.timeline()
+            .from(".hero-title", { duration: 1.5, scale: 0.3, opacity: 0, ease: "back.out(1.7)" })
+            .from(".hero-subtitle", { duration: 1, y: 100, opacity: 0, ease: "power3.out" }, "-=0.5");
+
+        // Outro animation
+        function outroAnimation() {
+            return gsap.timeline()
+                .to(".hero-title", { duration: 1, scale: 0.3, opacity: 0, ease: "back.in(1.7)" })
+                .to(".hero-subtitle", { duration: 1, y: 100, opacity: 0, ease: "power3.in" }, "-=0.5");
+        }
 
         // Background animation
         gsap.to(".hero-section", {
