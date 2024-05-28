@@ -24,9 +24,17 @@
         // Navbar animation
         gsap.from(".nav-link", { duration: 1, y: -50, opacity: 0, stagger: 0.2, ease: "back.out(1.7)" });
 
-        // About section animation
-        gsap.from(".about-title", { duration: 2, x: -100, opacity: 0, ease: "power2" });
-        gsap.from(".about-content", { duration: 2, x: 100, opacity: 0, delay: 0.5, stagger: 0.5, ease: "power2" });
+        // About section intro animation
+        gsap.timeline()
+            .from(".about-title", { duration: 1.5, x: -100, opacity: 0, ease: "back.out(1.7)" })
+            .from(".about-content", { duration: 1, y: 50, opacity: 0, stagger: 0.3, ease: "power3.out" }, "-=0.5");
+
+        // Outro animation
+        function outroAnimation() {
+            return gsap.timeline()
+                .to(".about-title", { duration: 1, x: -100, opacity: 0, ease: "back.in(1.7)" })
+                .to(".about-content", { duration: 1, y: 50, opacity: 0, stagger: 0.3, ease: "power3.in" }, "-=0.5");
+        }
 
         // ScrollTrigger animation
         gsap.registerPlugin(ScrollTrigger);
