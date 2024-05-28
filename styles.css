@@ -9,7 +9,7 @@ body {
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #444; /* Dark gray navbar background */
+    background-color: #ff6f61; /* Red navbar background */
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -26,11 +26,11 @@ body {
 }
 
 .nav-link:hover {
-    color: #0078d7; /* Blue on hover */
+    color: #07f; /* Bright blue on hover */
     transform: scale(1.1);
 }
 
-.hero-section, .about-section, .download-section {
+.hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,31 +38,54 @@ body {
     text-align: center;
     height: 100vh;
     padding: 20px;
-    background-color: transparent; /* Transparent background */
+    background: linear-gradient(135deg, #ffa931, #fe2f53, #1fd3e8); /* Gradient background */
 }
 
-.hero-title, .about-title, .download-title {
+.hero-title {
     font-size: 48px;
     margin-bottom: 20px;
-    color: #333; /* Dark text color */
+    color: #fff; /* White text color */
 }
 
-.hero-subtitle, .about-content, .download-links {
+.hero-subtitle {
+    font-size: 24px;
+    color: #fff; /* White text color */
+}
+
+.about-section, .download-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff6f61, #ffcb05, #35a084); /* Gradient background */
+}
+
+.about-title, .download-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #fff; /* White text color */
+}
+
+.about-content {
     font-size: 20px;
     max-width: 800px;
     text-align: center;
-    color: #666; /* Medium dark text color */
+    color: #eee; /* Light gray text color */
 }
 
 .download-links {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
 .download-link {
     padding: 10px 20px;
-    background-color: #0078d7; /* Blue button background */
+    background-color: #07f; /* Bright blue button background */
     color: #fff; /* White text color */
     text-decoration: none;
     border-radius: 5px;
@@ -71,6 +94,6 @@ body {
 }
 
 .download-link:hover {
-    background-color: #005a9e; /* Darker blue on hover */
+    background-color: #ff6f61; /* Bright red on hover */
     transform: translateY(-5px);
 }
