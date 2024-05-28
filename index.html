@@ -29,155 +29,24 @@
             text-decoration: none;
         }
         .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fff;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-        }
-        .intro-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        opacity: 1;
-        transition: opacity 1s ease; /* Fade out effect */
-        z-index: 9999;
-    }
-    .logo-img {
-        opacity: 0;
-        animation: slideIn 2s forwards;
-        max-width: 400px; /* Set maximum width for the logo */
-    }
-    .company-name {
-        opacity: 0;
-        animation: fadeIn 2s forwards;
-        animation-delay: 1s;
-        color: gold;
-        font-size: 150px; /* Increase font size */
-        margin-left: 20px;
-    }
-    .powered-by {
-        opacity: 0;
-        animation: fadeIn 2s forwards;
-        animation-delay: 2s;
-        color: gold;
-        font-size: 80px; /* Increase font size */
-        margin-left: 20px;
-    }
-    @keyframes slideIn {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        #main-content {
-            /* Displayed only when intro screen is hidden */
-            display: none;
-        }
-        .hidden {
-            display: none;
+            color: blue;
         }
     </style>
 </head>
 <body>
-    <div class="intro-screen">
-      <img src="/icon.png" alt="Logo" class="logo-img">
-      <div>
-        <h1 class="company-name"><div class="moving-gradient">Mastro Clock</div></h1>
-        <p class="powered-by">The Magic Of Time</p>
-      </div>
-    </div>
+    
     <div id="main-content" style="display: none;">
         <div class="navbar">
             <a href="/" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#download" class="nav-link">Download</a>
+            <a href="/about" class="nav-link">About</a>
+            <a href="/download" class="nav-link">Download</a>
+            <a href="/versions" class="nav-link">Versions</a>
         </div>
-        <!-- Divs -->
-        <div id="" class="content">
-            <h1>Welcome to Mastro Clock</h1>
-            <p>Experience the magic of time.</p>
-        </div>
-
-        <div id="about" class="content hidden">
-            <h2>About Mastro Clock</h2>
-            <p>Mastro Clock is an innovative clock application that provides a unique user experience with customizable features and stunning designs.</p>
-            <p>Our mission is to revolutionize the way people interact with time, making it more intuitive, enjoyable, and meaningful.</p>
-        </div>
-
-        <div id="download" class="content hidden">
-            <h2>Download Mastro Clock</h2>
-            <div class="download-links">
-                <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0.AppImage" class="download-link" data-platform="linux">Linux</a>
-                <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0.exe" class="download-link" data-platform="windows">Windows</a>
-                <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0-x64.dmg" class="download-link" data-platform="mac/x64">Mac x64</a>
-                <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0-arm64.dmg" class="download-link" data-platform="mac/arm64">Mac ARM64</a>
-            </div>
-        </div>
-
-        <script>        
-            // JavaScript to handle navigation
-            document.querySelectorAll('.navbar a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    document.querySelectorAll('.content').forEach(content => {
-                        if (content.id === targetId) {
-                            content.classList.remove('hidden');
-                        } else {
-                            content.classList.add('hidden');
-                        }
-                    });
-                    if (targetId === '') {
-                        window.history.pushState(null, null, '/');
-                    } else {
-                        window.history.pushState(null, null, '#' + targetId);
-                    }
-                });
-            });
-
-            // Check if there's a hash in the URL and show the corresponding section
-            window.addEventListener('DOMContentLoaded', function() {
-                const hash = window.location.hash.substring(1);
-                const targetContent = document.getElementById(hash);
-                if (targetContent) {
-                    document.querySelectorAll('.content').forEach(content => {
-                        content.classList.add('hidden');
-                    });
-                    targetContent.classList.remove('hidden');
-                }
-            });
-        </script>
     </div>
+    </header>
     <script>
-  window.onload = function() {
-      // After window loads, fade out the intro screen
-      setTimeout(function() {
-          var introScreen = document.querySelector('.intro-screen');
-          introScreen.style.opacity = '0';
-          // Remove intro screen from the DOM after fade out animation completes
-          setTimeout(function() {
-              introScreen.parentNode.removeChild(introScreen);
-              // Show the main content after intro screen is removed
-              document.getElementById('main-content').style.display = 'block';
-          }, 1000); // Adjust the delay as needed, should match the duration of fade out animation
-      }, 4000); // Adjust the delay as needed
-  }
-</script>
+        gsap.from(".hero-title", { duration: 2, y: -50, opacity: 0, ease: "bounce" });
+        gsap.from(".hero-subtitle", { duration: 2, y: 50, opacity: 0, delay: 1 });
+    </script>
 </body>
 </html>
