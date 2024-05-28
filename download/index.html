@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Super Cool Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/download/" class="nav-link">Download</a>
+    </div>
+    <section class="download-section">
+        <h1 class="download-title">Download</h1>
+        <div class="download-links">
+            <a href="#" class="download-link">Linux</a>
+            <a href="#" class="download-link">Windows</a>
+            <a href="#" class="download-link">Mac x64</a>
+            <a href="#" class="download-link">Mac ARM64</a>
+        </div>
+    </section>
+    <script>
+        gsap.from(".download-title", { duration: 2, scale: 0.5, opacity: 0, ease: "elastic" });
+        gsap.from(".download-link", { duration: 1, y: 30, opacity: 0, stagger: 0.2, delay: 1 });
+    </script>
+</body>
+</html>
