@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        nav a:hover {
+            color: #666;
+        }
+        section {
+            padding: 20px;
+            display: none;
+        }
+        section.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Single Page Website</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home" class="show">
+    <h2>Welcome to Our Website!</h2>
+    <p>This is the home page content.</p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>This is the about page content.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>This is the contact page content.</p>
+</section>
+
+<script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('show');
+                if (section.getAttribute('id') === targetId) {
+                    section.classList.add('show');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
