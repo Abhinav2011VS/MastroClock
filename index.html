@@ -84,10 +84,8 @@
                 const targetId = this.getAttribute('href').substring(1);
                 document.querySelectorAll('section').forEach(section => {
                     section.classList.remove('show');
-                    if (section.getAttribute('id') === targetId) {
-                        section.classList.add('show');
-                    }
                 });
+                document.getElementById(targetId).classList.add('show');
             });
         });
 
