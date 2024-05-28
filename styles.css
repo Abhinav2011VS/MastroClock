@@ -61,11 +61,13 @@ body {
 .about-title, .download-title {
     font-size: 48px;
     margin: 0 0 20px 0;
+    text-align: center;
 }
 
 .about-content {
     font-size: 20px;
     max-width: 800px;
+    text-align: center;
 }
 
 .download-links {
