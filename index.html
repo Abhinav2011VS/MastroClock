@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastro Clock</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/download/" class="nav-link">Download</a>
+    </div>
+    <header class="hero-section">
+        <h1 class="hero-title">Welcome to Mastro Clock</h1>
+        <p class="hero-subtitle">The cool customizable hovering clock customization.</p>
+    </header>
+    <script>
+        gsap.from(".hero-title", { duration: 2, y: -50, opacity: 0, ease: "bounce" });
+        gsap.from(".hero-subtitle", { duration: 2, y: 50, opacity: 0, delay: 1 });
+    </script>
+</body>
+</html>
