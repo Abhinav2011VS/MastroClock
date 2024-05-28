@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Mastro Clock</title>
-    <link rel="stylesheet" href="/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <title>About Mastro Clock</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="navbar">
@@ -13,10 +12,11 @@
         <a href="/about/" class="nav-link">About</a>
         <a href="/download/" class="nav-link">Download</a>
     </div>
-    <section class="about-section">
-        <h1 class="about-title">About Us</h1>
-        <p class="about-content">We are passionate about creating stunning animations and interactive experiences. Our team is dedicated to pushing the boundaries of web design.</p>
-    </section>
+    <div class="page-content">
+        <h1 id="about-title">About Mastro Clock</h1>
+        <p id="about-content">Mastro Clock is an innovative clock application that provides a unique user experience with customizable features and stunning designs.</p>
+        <p id="about-content">Our mission is to revolutionize the way people interact with time, making it more intuitive, enjoyable, and meaningful.</p>
+    </div>
     <script>
         gsap.from(".about-title", { duration: 2, x: -100, opacity: 0, ease: "power2" });
         gsap.from(".about-content", { duration: 2, x: 100, opacity: 0, delay: 1, ease: "power2" });
