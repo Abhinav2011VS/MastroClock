@@ -6,6 +6,7 @@
     <title>About Mastro Clock</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="icon" href="/icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -14,11 +15,12 @@
         <a href="/download/" class="nav-link">Download</a>
     </div>
     <div class="page-content">
-        <h1 id="about-title">About Mastro Clock</h1>
-        <p id="about-content">Mastro Clock is an innovative clock application that provides a unique user experience with customizable features and stunning designs.</p>
-        <p id="about-content">Our mission is to revolutionize the way people interact with time, making it more intuitive, enjoyable, and meaningful.</p>
+        <h1 id="about-title" class="about-title">About Mastro Clock</h1>
+        <p id="about-content" class="about-content">Mastro Clock is an innovative clock application that provides a unique user experience with customizable features and stunning designs.</p>
+        <p id="about-content" class="about-content">Our mission is to revolutionize the way people interact with time, making it more intuitive, enjoyable, and meaningful.</p>
     </div>
     <script>
+        gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "power2.out" });
         gsap.from(".about-title", { duration: 2, x: -100, opacity: 0, ease: "power2" });
         gsap.from(".about-content", { duration: 2, x: 100, opacity: 0, delay: 1, ease: "power2" });
     </script>
