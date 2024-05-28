@@ -56,64 +56,82 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="/" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#download" class="nav-link">Download</a>
+    <div class="intro">
+        <img src="icon.png" alt="Icon">
+        <h1>Mastro Clock</h1>
+        <p>The magic of time</p>
     </div>
-    <!-- Divs -->
-    <div id="" class="content">
-        <h1>Welcome to Mastro Clock</h1>
-        <p>Experience the magic of time.</p>
-    </div>
-
-    <div id="about" class="content hidden">
-        <h2>About Mastro Clock</h2>
-        <p>Mastro Clock is an innovative clock application that provides a unique user experience with customizable features and stunning designs.</p>
-        <p>Our mission is to revolutionize the way people interact with time, making it more intuitive, enjoyable, and meaningful.</p>
-    </div>
-
-    <div id="download" class="content hidden">
-        <h2>Download Mastro Clock</h2>
-        <div class="download-links">
-            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0.AppImage" class="download-link" data-platform="linux">Linux</a>
-            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0.exe" class="download-link" data-platform="windows">Windows</a>
-            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0-x64.dmg" class="download-link" data-platform="mac/x64">Mac x64</a>
-            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0-arm64.dmg" class="download-link" data-platform="mac/arm64">Mac ARM64</a>
+    <div id="main-content" style="display: none;">
+        <div class="navbar">
+            <a href="/" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#download" class="nav-link">Download</a>
         </div>
-    </div>
+        <!-- Divs -->
+        <div id="" class="content">
+            <h1>Welcome to Mastro Clock</h1>
+            <p>Experience the magic of time.</p>
+        </div>
 
-    <script>        
-        // JavaScript to handle navigation
-        document.querySelectorAll('.navbar a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.querySelectorAll('.content').forEach(content => {
-                    if (content.id === targetId) {
-                        content.classList.remove('hidden');
+        <div id="about" class="content hidden">
+            <h2>About Mastro Clock</h2>
+            <p>Mastro Clock is an innovative clock application that provides a unique user experience with customizable features and stunning designs.</p>
+            <p>Our mission is to revolutionize the way people interact with time, making it more intuitive, enjoyable, and meaningful.</p>
+        </div>
+
+        <div id="download" class="content hidden">
+            <h2>Download Mastro Clock</h2>
+            <div class="download-links">
+                <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0.AppImage" class="download-link" data-platform="linux">Linux</a>
+                <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0.exe" class="download-link" data-platform="windows">Windows</a>
+                <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0-x64.dmg" class="download-link" data-platform="mac/x64">Mac x64</a>
+                <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0-arm64.dmg" class="download-link" data-platform="mac/arm64">Mac ARM64</a>
+            </div>
+        </div>
+
+        <script>        
+            // JavaScript to handle navigation
+            document.querySelectorAll('.navbar a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    document.querySelectorAll('.content').forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                    if (targetId === '') {
+                        window.history.pushState(null, null, '/');
                     } else {
-                        content.classList.add('hidden');
+                        window.history.pushState(null, null, '#' + targetId);
                     }
                 });
-                if (targetId === '') {
-                    window.history.pushState(null, null, '/');
-                } else {
-                    window.history.pushState(null, null, '#' + targetId);
+            });
+
+            // Check if there's a hash in the URL and show the corresponding section
+            window.addEventListener('DOMContentLoaded', function() {
+                const hash = window.location.hash.substring(1);
+                const targetContent = document.getElementById(hash);
+                if (targetContent) {
+                    document.querySelectorAll('.content').forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    targetContent.classList.remove('hidden');
                 }
             });
-        });
-
-        // Check if there's a hash in the URL and show the corresponding section
-        window.addEventListener('DOMContentLoaded', function() {
-            const hash = window.location.hash.substring(1);
-            const targetContent = document.getElementById(hash);
-            if (targetContent) {
-                document.querySelectorAll('.content').forEach(content => {
-                    content.classList.add('hidden');
-                });
-                targetContent.classList.remove('hidden');
-            }
+        </script>
+    </div>
+    <script>
+        // Wait for the page to load
+        window.addEventListener('load', function() {
+            // Fade out the intro screen after a delay
+            setTimeout(function() {
+                document.querySelector('.intro').style.opacity = '0';
+                // Show the main content
+                document.getElementById('main-content').style.display = 'block';
+            }, 3000); // Adjust the delay as needed (in milliseconds)
         });
     </script>
 </body>
