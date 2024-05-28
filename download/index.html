@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="icon" href="/icon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadLinks = document.querySelectorAll('.download-link');
+            downloadLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    const platform = this.getAttribute('data-platform'); // Get the platform attribute
+                    setTimeout(() => {
+                        window.location.href = `/download/${platform}/installation/`; // Redirect based on platform
+                    }, 3000); // Redirect after 3 seconds (adjust as needed)
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="navbar">
@@ -17,10 +31,10 @@
     <section class="download-section">
         <h1 class="download-title">Download</h1>
         <div class="download-links">
-            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.3.AppImage" class="download-link">Linux</a>
-            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.3.exe" class="download-link">Windows</a>
-            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.3-x64.dmg" class="download-link">Mac x64</a>
-            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.3-arm64.dmg" class="download-link">Mac ARM64</a>
+            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.3.AppImage" class="download-link" data-platform="linux">Linux</a>
+            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.3.exe" class="download-link" data-platform="windows">Windows</a>
+            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.3-x64.dmg" class="download-link" data-platform="mac/x64">Mac x64</a>
+            <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.3-arm64.dmg" class="download-link" data-platform="mac/arm64">Mac ARM64</a>
         </div>
     </section>
     <script>
