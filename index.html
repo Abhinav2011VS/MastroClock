@@ -96,8 +96,8 @@
                         content.classList.add('hidden');
                     }
                 });
-                if (targetId === 'home') {
-                    window.history.pushState(null, null, '/home');
+                if (targetId === '') {
+                    window.history.pushState(null, null, '/');
                 } else {
                     window.history.pushState(null, null, '#' + targetId);
                 }
