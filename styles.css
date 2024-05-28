@@ -1,99 +1,42 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0; /* Light gray background */
-    color: #333; /* Dark text color */
-    overflow: hidden; /* Prevent scrolling */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #ff6f61; /* Red navbar background */
+    background-color: #333;
     padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .nav-link {
     margin: 0 15px;
     text-decoration: none;
-    color: #fff; /* White text color */
+    color: #fff;
     font-size: 18px;
-    transition: color 0.3s, transform 0.3s;
+    transition: color 0.3s;
 }
 
 .nav-link:hover {
-    color: #07f; /* Bright blue on hover */
-    transform: scale(1.1);
-}
-
-.hero-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-    padding: 20px;
-    background: linear-gradient(135deg, #ffa931, #fe2f53, #1fd3e8); /* Gradient background */
-}
-
-.hero-title {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: #fff; /* White text color */
-}
-
-.hero-subtitle {
-    font-size: 24px;
-    color: #fff; /* White text color */
-}
-
-.about-section, .download-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px 20px;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ff6f61, #ffcb05, #35a084); /* Gradient background */
-}
-
-.about-title, .download-title {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: #fff; /* White text color */
-}
-
-.about-content {
-    font-size: 20px;
-    max-width: 800px;
-    text-align: center;
-    color: #eee; /* Light gray text color */
-}
-
-.download-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    color: #0078d7;
 }
 
 .download-link {
     padding: 10px 20px;
-    background-color: #07f; /* Bright blue button background */
-    color: #fff; /* White text color */
+    background-color: #0078d7;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 1.5em;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .download-link:hover {
-    background-color: #ff6f61; /* Bright red on hover */
+    background-color: #005a9e;
     transform: translateY(-5px);
 }
