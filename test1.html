@@ -74,9 +74,22 @@
                 section.classList.remove('show');
                 if (section.getAttribute('id') === targetId) {
                     section.classList.add('show');
+                    window.location.hash = targetId;
                 }
             });
         });
+    });
+
+    // Check if there's a hash in the URL and show the corresponding section
+    window.addEventListener('DOMContentLoaded', function() {
+        const hash = window.location.hash.substring(1);
+        const targetSection = document.getElementById(hash);
+        if (targetSection) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('show');
+            });
+            targetSection.classList.add('show');
+        }
     });
 </script>
 
