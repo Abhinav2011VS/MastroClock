@@ -59,27 +59,6 @@
         gsap.timeline()
             .from(".about-title", { duration: 1.5, x: -100, opacity: 0, ease: "back.out(1.7)" })
             .from(".about-content", { duration: 1, y: 50, opacity: 0, stagger: 0.3, ease: "power3.out" }, "-=0.5");
-
-        // Outro animation
-        function outroAnimation() {
-            return gsap.timeline()
-                .to(".about-title", { duration: 1, x: -100, opacity: 0, ease: "back.in(1.7)" })
-                .to(".about-content", { duration: 1, y: 50, opacity: 0, stagger: 0.3, ease: "power3.in" }, "-=0.5");
-        }
-
-        // ScrollTrigger animation
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from(".about-section", {
-            scrollTrigger: {
-                trigger: ".about-section",
-                start: "top center",
-                end: "bottom center",
-                scrub: true,
-            },
-            opacity: 0,
-            y: 100,
-            duration: 3
-        });
     </script>
 </body>
 </html>
