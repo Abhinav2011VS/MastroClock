@@ -10,8 +10,9 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #1e1e1e;
-            color: black;
+            color: white; /* Changed text color to white for readability */
         }
+
         .navbar {
             display: flex;
             justify-content: center;
@@ -21,6 +22,7 @@
             top: 0;
             z-index: 1000;
         }
+
         .navbar a {
             display: block;
             color: #f2f2f2;
@@ -28,9 +30,11 @@
             padding: 14px 20px;
             text-decoration: none;
         }
+
         .navbar a:hover {
             color: blue;
         }
+
         .nav-link {
             margin: 0 15px;
             text-decoration: none;
@@ -38,14 +42,17 @@
             font-size: 18px;
             transition: color 0.3s;
         }
+
         .content {
             padding: 20px;
             animation: fadeIn 3s forwards;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -54,34 +61,42 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
         .versions {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
+
         .version {
             background: #e3f2fd;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .version h3 {
             margin-top: 0;
             color: #2196f3;
         }
+
         .version p, .version ul {
             margin: 0;
             padding: 0;
+            color: black;
         }
+
         .version ul {
             list-style-type: none;
             padding-left: 20px;
         }
+
         .version ul li {
             position: relative;
             padding-left: 20px;
             margin-bottom: 5px;
         }
+
         .version ul li::before {
             content: '•';
             position: absolute;
@@ -89,15 +104,18 @@
             color: #2196f3;
             font-weight: bold;
         }
+
         h2 {
             color: white;
         }
+
         .download-links {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 10px;
         }
+
         .download-link {
             padding: 10px 20px;
             background-color: #0078d7;
@@ -107,9 +125,21 @@
             font-size: 1em;
             transition: background-color 0.3s, transform 0.3s;
         }
+
         .download-link:hover {
             background-color: #005a9e;
             transform: translateY(-5px);
+        }
+
+        .release-description {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            color: #333;
+            border-radius: 5px;
+        }
+        .version .versions .release-description h2 {
+            color: black
         }
     </style>
 </head>
@@ -123,88 +153,94 @@
     <div class="content">
         <div class="container">
             <h2>📈 Version History</h2>
-            <div class="versions">
-                <div class="version">
-                    <h3>0.1.0</h3>
-                    <p><strong>Release Date:</strong> 28-5-2024</p>
-                    <p><strong>Status: </strong>Published</p>
-                    <p><strong>Features/Changes:</strong></p>
-                    <ul>
-                        <li>Minor Fixes</li>
-                        <li>Higher Speed</li>
-                        <li>Made smaller size of files</li>
-                        <li>Better and cooler interface</li>
-                        <li>Lesser Size</li>
-                        <li>Lesser Power and usage consumption</li>
-                    </ul>
-                    <p><strong>Download:</strong></p>
-                    <div class="download-links">
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0.AppImage" class="download-link" data-platform="linux">Linux</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0.exe" class="download-link" data-platform="windows">Windows</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0-x64.dmg" class="download-link" data-platform="mac/x64">Mac x64</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.1.0/MastroClock-installer-0.1.0-arm64.dmg" class="download-link" data-platform="mac/arm64">Mac ARM64</a>
-                    </div>
-                </div>
-                <div class="version">
-                    <h3>0.0.3</h3>
-                    <p><strong>Release Date:</strong> 28-5-2024</p>
-                    <p><strong>Status: </strong>Published</p>
-                    <p><strong>Features/Changes:</strong></p>
-                    <ul>
-                        <li>Minor Fixes</li>
-                        <li>Links Fixes</li>
-                    </ul>
-                    <p><strong>Download:</strong></p>
-                    <div class="download-links">
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.3/MastroClock-installer-0.0.3.AppImage" class="download-link" data-platform="linux">Linux</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.3/MastroClock-installer-0.0.3.exe" class="download-link" data-platform="windows">Windows</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.3/MastroClock-installer-0.0.3-x64.dmg" class="download-link" data-platform="mac/x64">Mac x64</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.3/MastroClock-installer-0.0.3-arm64.dmg" class="download-link" data-platform="mac/arm64">Mac ARM64</a>
-                    </div>
-                </div>
-                <div class="version">
-                    <h3>0.0.2</h3>
-                    <p><strong>Release Date:</strong> 28-5-2024</p>
-                    <p><strong>Status: </strong>Published</p>
-                    <p><strong>Features/Changes:</strong></p>
-                    <ul>
-                        <li>Minor Fixes</li>
-                    </ul>
-                    <p><strong>Download:</strong></p>
-                    <div class="download-links">
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.2/MastroClock-installer-0.0.2.AppImage" class="download-link" data-platform="linux">Linux</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.2/MastroClock-installer-0.0.2.exe" class="download-link" data-platform="windows">Windows</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.2/MastroClock-installer-0.0.2-x64.dmg" class="download-link" data-platform="mac/x64">Mac x64</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.2/MastroClock-installer-0.0.2-arm64.dmg" class="download-link" data-platform="mac/arm64">Mac ARM64</a>
-                    </div>
-                </div>
-                <div class="version">
-                    <h3>0.0.1</h3>
-                    <p><strong>Release Date:</strong> 28-5-2024</p>
-                    <p><strong>Status: </strong>Published</p>
-                    <p><strong>Features/Changes:</strong></p>
-                    <ul>
-                        <li>Hovering Clock</li>
-                        <li>Simple Interface</li>
-                        <li>No customizations</li>
-                        <li>Not much app settings</li>
-                        <li>Auto Launch on Startup</li>
-                    </ul>
-                    <p><strong>Download:</strong></p>
-                    <div class="download-links">
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.1.AppImage" class="download-link" data-platform="linux">Linux</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.1.exe" class="download-link" data-platform="windows">Windows</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.1-x64.dmg" class="download-link" data-platform="mac/x64">Mac x64</a>
-                        <a href="https://github.com/Abhinav2011VS/MastroClock/releases/download/v0.0.1/MastroClock-installer-0.0.1-arm64.dmg" class="download-link" data-platform="mac/arm64">Mac ARM64</a>
-                    </div>
-                </div>
-            </div>
+            <div class="versions" id="versions">Loading...</div>
             <p style="color: white;"><strong>DD-MM-YYYY</strong> Means Not Yet Released</p>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
     <script>
-        gsap.from(".nav-link", { duration: 1, opacity: 0, y: -50, stagger: 0.2 });
+        // Fetch releases data from GitHub API
+        async function fetchReleases() {
+            const repoOwner = 'Abhinav2011VS';  // GitHub username
+            const repoName = 'MastroClock-Code'; // Repository name
+            const releasesUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/releases`;
+
+            try {
+                const response = await fetch(releasesUrl);
+                const releases = await response.json();
+                console.log('Fetched releases:', releases); // Debugging the fetched data
+                displayReleases(releases);
+            } catch (error) {
+                console.error('Error fetching releases:', error);
+            }
+        }
+
+        // Display releases in HTML
+        function displayReleases(releases) {
+            const versionsContainer = document.getElementById('versions');
+            versionsContainer.innerHTML = ''; // Clear loading message
+
+            if (releases.length === 0) {
+                versionsContainer.innerHTML = 'No releases found.';
+                return;
+            }
+
+            releases.forEach(release => {
+                // Convert release date to DD-MM-YYYY format
+                const releaseDate = new Date(release.published_at);
+                const day = String(releaseDate.getDate()).padStart(2, '0');
+                const month = String(releaseDate.getMonth() + 1).padStart(2, '0');
+                const year = releaseDate.getFullYear();
+                const formattedDate = `${day}-${month}-${year}`;
+
+                const version = release.tag_name;
+                let releaseDescription = release.body || 'No description available';
+
+                // Remove the unwanted text from the release description
+                const unwantedTextRegex = /Visit Our Website to Download\s+https:\/\/mastroclock\.pages\.dev\/download/gi;
+                releaseDescription = releaseDescription.replace(unwantedTextRegex, '');
+
+                // Convert Markdown to HTML for release description
+                const descriptionHTML = marked(releaseDescription, { breaks: true });
+
+                // Filter assets for platform-specific files
+                const assets = release.assets.reduce((acc, asset) => {
+                    if (asset.name.endsWith('.exe')) {
+                        acc.windows = asset.browser_download_url;
+                    } else if (asset.name.endsWith('.AppImage')) {
+                        acc.linux = asset.browser_download_url;
+                    } else if (asset.name.endsWith('-x64.dmg')) {
+                        acc.mac_x64 = asset.browser_download_url;
+                    } else if (asset.name.endsWith('-arm64.dmg')) {
+                        acc.mac_arm64 = asset.browser_download_url;
+                    }
+                    return acc;
+                }, {});
+
+                // Create HTML for each version
+                const versionElement = document.createElement('div');
+                versionElement.classList.add('version');
+                versionElement.innerHTML = `
+                    <h3>${version}</h3>
+                    <p><strong>Release Date:</strong> ${formattedDate}</p>
+                    <p><strong>Status:</strong> Published</p>
+                    <div class="release-description">${descriptionHTML}</div>
+                    <p><strong>Download:</strong></p>
+                    <div class="download-links">
+                        ${assets.linux ? `<a href="${assets.linux}" class="download-link" data-platform="linux">Linux</a>` : ''}
+                        ${assets.windows ? `<a href="${assets.windows}" class="download-link" data-platform="windows">Windows</a>` : ''}
+                        ${assets.mac_x64 ? `<a href="${assets.mac_x64}" class="download-link" data-platform="mac/x64">Mac x64</a>` : ''}
+                        ${assets.mac_arm64 ? `<a href="${assets.mac_arm64}" class="download-link" data-platform="mac/arm64">Mac ARM64</a>` : ''}
+                    </div>
+                `;
+                versionsContainer.appendChild(versionElement);
+            });
+        }
+
+        // Call the fetchReleases function when the page loads
+        fetchReleases();
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.2/marked.min.js"></script>
 </body>
 </html>
